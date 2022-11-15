@@ -2,6 +2,7 @@ import { AccountCircleRounded, ExpandMore } from "@mui/icons-material"
 import styled from "styled-components"
 import { mobile } from "../responsive"
 import logo from "../images/logo.png"
+import { Link } from "react-router-dom"
 
 const Container = styled.div`
 height: 73.03px;
@@ -19,14 +20,14 @@ const Left = styled.div`
 // border: 2px solid black;
 flex:1;
 margin-left:5%;
-${mobile({marginRight: '2%'})};
+${mobile({ marginRight: '2%' })};
 `
 const ImageCom = styled.img`
 width: 160px;
 // width: 24%;
 height: 63px;
 cursor: pointer;
-// ${mobile({width: '85%'})}
+// ${mobile({ width: '85%' })}
 `
 const Right = styled.div`
 // border: 2px solid black;
@@ -34,7 +35,7 @@ flex:1;
 display:flex;
 justify-content: space-between;
 margin-right:5%;
-${mobile({marginRight: '2%'})};
+${mobile({ marginRight: '2%' })};
 `
 const MenuItem1 = styled.div`
 font-family: 'Poppins';
@@ -112,7 +113,9 @@ const Navbar = () => {
                     <ImageCom src={logo} alt="Site Logo" />
                 </Left>
                 <Right>
-                    <MenuItem1>My Assignment</MenuItem1>
+                    <Link to="/about" style={{textDecoration: 'none'}}>
+                        <MenuItem1 >My Assignment</MenuItem1>
+                    </Link>
                     <MenuItem2>Chat with Mentor</MenuItem2>
                     <MenuItem3>
                         <ProfileIcon>
